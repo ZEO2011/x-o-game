@@ -1,0 +1,66 @@
+@use "../sass/_mixins" as *;
+
+.alert {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    color: white;
+    width: 300px;
+    padding: 10px;
+    animation: slideRight 0.5s;
+    transition: 1s;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+@keyframes slideRight {
+    from {
+        right: -300px;
+    }
+
+    to {
+        right: 20px;
+    }
+}
+
+.alert-success {
+    background-color: green;
+}
+
+.alert-error {
+    background-color: red;
+}
+
+.alert-draw {
+    background-color: blue;
+}
+
+.close {
+    right: -500px;
+}
+
+.alert button {
+    $rotation_ratio: 45deg;
+    $width: 3px;
+    $height: 20px;
+    position: relative;
+    margin: 5px 0 0 5px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 0.25rem;
+
+    &::before {
+        @include player-marker($rotation_ratio, $width, $height);
+        background: white;
+    }
+
+    &::after {
+        @include player-marker(-$rotation_ratio, $width, $height);
+        background: white;
+    }
+}

@@ -1,0 +1,12 @@
+@mixin player-marker($rotation-ratio, $width: 10px, $height: 90px) {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: $width;
+    height: $height;
+    rotate: $rotation-ratio;
+    background: black;
+    border-radius: 0.25rem;
+}
