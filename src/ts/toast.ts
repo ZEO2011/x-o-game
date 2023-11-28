@@ -25,12 +25,18 @@ const toast = {
         const alertMessages = document.getElementById("app");
         if (!alertMessages) return;
         alertMessages.innerHTML += `<div class="alert alert-error"><button></button> <h1>${text}</h1></div>`;
+        const alert = alertMessages.querySelector(".alert");
+        if (!alert) return;
+        alert.querySelector("button")?.addEventListener("click", clearToasts);
         setTimeout(clearToasts, 3000);
     },
     draw: (text: string) => {
         const alertMessages = document.getElementById("app");
         if (!alertMessages) return;
         alertMessages.innerHTML += `<div class="alert alert-draw"><button></button> <h1>${text}</h1></div>`;
+        const alert = alertMessages.querySelector(".alert");
+        if (!alert) return;
+        alert.querySelector("button")?.addEventListener("click", clearToasts);
         setTimeout(clearToasts, 3000);
     },
 };
