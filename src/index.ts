@@ -20,7 +20,7 @@ function render() {
         ${boxes
             .map(
                 (box) =>
-                    `<button data-id="${box.id}" data-player="${box.player}" class="grid-item"></button>`,
+                    `<button aria-label="player-box" data-id="${box.id}" data-player="${box.player}" class="grid-item"></button>`,
             )
             .join("")}
     </div>
